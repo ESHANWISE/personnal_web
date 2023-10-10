@@ -1,0 +1,50 @@
+{% extends "admin/admin.html"%}
+
+{%block content%}
+
+{#{{users}}
+
+
+{{oneuser.firsname}}
+<p>Showing {{total}} record(s) of {{users|count}}</p>#}
+
+<span>Control</span>{{control}} <br> {{p}}
+
+{% for pro,cat,brand in control %}
+<p> {{pro.product_name}} {{cat.catgory_name}} {{brand.brand_name}} </p>
+{%endfor%}
+
+     <div class="row" style="min-height: 450px;">
+        <div class="col-md-12">
+                <h2>Fetching from Individual columns</h2>
+                {% if p %}
+                <table class="table table-responsive">
+                        <thhead>
+                                <tr>
+                                        <th>S/n</th>
+                                        <th>Productname</th>
+                                        <th>Price</th>
+                                        <th>Category</th>
+                                        
+                                </tr>
+                        </thead>
+                       <tbody>
+                                {%for prod in p%}
+                                <tr>
+                                      
+                                        <td>{{loop.index}}</td>
+                                        <td>{{prod.product_name}}</td>
+                                        <td>{{prod.product_price}}</td>
+                                        <td>{{prod.product_category}}</td>
+                                        
+                                        
+                                </tr>
+                                {%endfor%}
+                        </tbody>
+               </table>
+
+               {%else%}
+               <div class="alert alert-info text-center">No Registration Found</div>
+               {%endif%}
+        </div>
+        {%endblock%}

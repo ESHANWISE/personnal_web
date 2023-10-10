@@ -1,0 +1,52 @@
+{% extends "users/layout1.html"%}
+
+{% block title %} 
+{{super()}} : Shops
+{%endblock %}
+
+{% block content%}
+<div class="col-md-12">
+    <div style="align-items: center; color: green; background-color: beige;">
+    <h2 class="text-center">Big shops in {{request.cookies.get("dest","The World")}}</h2>
+    <p class="text-center">Here are a few interesting places to shop</p>
+    </div>
+
+    <div style="border: 2px solid green;background-color: beige; padding: 12px;">
+        {%if request.cookies.get("dest") == "africa" or request.cookies.get("dest") == None or request.cookies.get("dest") == "" %}
+        <h3>Titanic</h3>
+        <ul>
+            {%for a in africa%}
+            <li>{{a}}</li>
+            {%endfor%}
+       </ul>
+       {%endif%}
+    </div>
+    <div style="background-color: beige; padding: 12px;">
+        {%if request.cookies.get("dest") == "europe" or request.cookies.get("dest") == None  or request.cookies.get("dest") == "" %}
+        <h3>Shoprite</h3>
+        <ul>
+            {%for e in europe%}
+            <li>{{e}}</li>
+            {%endfor%}
+       </ul>
+       {%endif%}
+    </div>
+    <div style="background-color: beige; padding: 12px;">
+        {%if request.cookies.get("dest") == "Asia" or request.cookies.get("dest") == None  or request.cookies.get("dest") == "" %}
+        <h3>Duke and duchess</h3>
+        <ul>
+            {%for s in Asia%}
+            <li>{{s}}</li>
+            {%endfor%}
+       </ul>
+       {%endif%}
+    </div>
+
+    {%for a in africa%}
+    <div style="border: 2px solid green;background-color: beige; padding: 12px;">
+        <h5>{{a}}</h5>
+    </div>
+    {%endfor%}
+</div>
+
+{%endblock%}

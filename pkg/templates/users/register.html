@@ -1,0 +1,60 @@
+{% extends "users/layout1.html"%}
+
+{% block title %} 
+{{super()}} : Register Us
+{%endblock %}
+
+
+{% block content%}
+<h1>Registration Form</h1>
+<hr>
+<p>Please complete the form below.</p>
+
+{% if reg.fname.errors or reg.lname.errors or reg.cpwd.errors %}
+<div class="alert alert-danger">
+    <p>{{reg.fname.errors}}</p>
+    <p>{{reg.lname.errors}}</p>
+    <p>{{reg.cpwd.errors}}</p>
+</div>
+{%endif%}
+    <div class="col-md-6">
+        <form action="" method="post" novalidate>
+            {{reg.csrf_token}}
+            <div class="mb-1">
+                {{reg.fname.label}}
+                {{reg.fname(class_='form-control')}}
+            </div>
+            <div class="mb-1">
+                {{reg.lname.label}}
+                {{reg.lname(class_='form-control')}}
+            </div>
+            <div class="mb-1">
+                {{reg.usermail.label}}
+                {% if reg.usermail.errors %}
+                    {% for i in reg.usermail.errors %}
+                        <span style="color: red;">{{i}}</span>
+                    {% endfor %}
+                {% endif %}
+                {{reg.usermail(class_='form-control')}}
+            </div>
+            <div class="mb-1">
+                {{reg.pwd.label}}
+                {{reg.pwd(class_='form-control')}}
+            </div>
+            <div class="mb-1">
+                {{reg.cpwd.label}}
+                {{reg.cpwd(class_='form-control')}}
+            </div>
+            <div class="mb-1">
+                {{reg.profile.label}}
+                {{reg.profile(class_='form-control')}}
+            </div>
+            <div class="mb-1">
+                {{reg.btnsubmit(class_='btn btn-success mt-2')}}
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4 d-inline-block">
+        <img src="/static/img/h3.jpg" alt="" class="img-fluid">
+    </div>
+{% endblock %}

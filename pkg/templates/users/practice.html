@@ -1,0 +1,28 @@
+{% extends "users/layout1.html"%}
+
+{% block title %} 
+{{super()}} : Destination
+{%endblock %}
+
+{% block content%}
+
+<div class="col-md-6">
+    {% set m = get_flashed_messages(with_categories= True)%}
+    {%if m%}
+        {% for flashes, message in m %}
+            {% if flashes == "error" %}
+                <p class="alert alert-danger">{{message}}</p>
+            {% else %}
+                <p class="alert alert-info">{{message}}</p>
+            {%endif%}
+        {%endfor%}
+    {%endif%}
+    <form action="/practice" method="POST">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+       <input type="text" name="name" placeholder="what is you name"><br>
+       <input type="password" name="pwd" placeholder="password input">
+       <button type="submit">submit</button>
+    </form>
+    
+</div>
+{% endblock%}

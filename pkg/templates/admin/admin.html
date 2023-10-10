@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.min.css">
+    <style type="text/css">
+
+/* div{
+    border: 1px solid red;
+} */
+
+
+.nav{
+    background-color: antiquewhite;
+    height: 100px;
+}
+.content{
+    background-color: antiquewhite;
+    height: 50px;
+}
+    </style>
+    <title>{% block title %} 
+        Cohort 25 Personal Website
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <div class="container">
+        <div class="row nav">
+            <div class="col-md-6 ">
+                <h2>Admin panel</h2>
+            </div>
+            <div class="col-md-6">
+                <ul >
+                    <li>Home</li>
+                    <li>All User</li>
+                    <li><a href="{{url_for('all_products')}}">Products</a></li>
+                    <li><a href="{{url_for('nojoin')}}">Products</a></li>
+                </ul>
+            </div>
+        </div>
+        {%block content%}
+       
+        {% endblock%}
+        <div class="row text-center align-items-center content">
+            <p>Copyright &copy; 2023</p>
+        </div>
+    </div>
+</body>
+</html>

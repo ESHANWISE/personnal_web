@@ -1,0 +1,18 @@
+{% extends "admin/admin.html"%}
+
+{%block content%}
+    <div class="col">
+        {{prod.product_name}} <br>
+
+        {{prod.product_category}} <br>
+
+        {{prod.catdeets}} <br>
+
+        {{prod.catdeets.catgory_name}} <br>
+
+        {{prod.catdeets.catgory_name}}- we have{{prod.product_category}} Products in mens Category
+
+                                                or
+        {{prod.catdeets.catgory_name}}- we have{{prod.product_category}} Products in mens Category
+    </div>
+{%endblock%}

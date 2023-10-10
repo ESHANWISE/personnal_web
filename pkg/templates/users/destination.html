@@ -1,0 +1,26 @@
+{% extends "users/layout1.html"%}
+
+{% block title %} 
+{{super()}} : Destination
+{%endblock %}
+
+{% block content%}
+
+<div class="col-md-6">
+
+    <form action="" method="POST">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <div class="mb-3">
+            <label for="">Choose Destination</label>
+            <select name="continent" class="form-control">
+                <option value="">Please select</option>
+                <option value="africa">Africa</option>
+                <option value="europe">Europe</option>
+                <option value="asia">Asia</option>
+            </select>
+        </div>
+        <button class="btn btn-success col-12">Next</button>
+    </form>
+    
+</div>
+{% endblock%}

@@ -1,0 +1,25 @@
+{% extends "users/layout1.html"%}
+
+{% block title %} 
+{{super()}} : Register Us
+{%endblock %}
+
+
+{% block content%}
+<h1>Registration Form</h1>
+<hr>
+<p>Please complete the form below.</p>
+
+
+    <div class="col-md-6">
+        <form action="" method="post" novalidate>
+        
+            <input type="text" name="fname" placeholder="Enter your name">
+            <!-- <input type="password" name="pwd" placeholder="Enter your name"> -->
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+    <div class="col-md-4 d-inline-block">
+        <img src="/static/img/h3.jpg" alt="" class="img-fluid">
+    </div>
+{% endblock %}

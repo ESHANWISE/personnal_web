@@ -1,0 +1,14 @@
+{% extends "users/layout1.html"%}
+
+{% block title %} 
+{{super()}} : Login
+{%endblock %}
+
+{% block content%}
+
+<div class="col-md-6">
+
+   <h2>Welcome {{session.get("user")}}</h2>
+    
+</div>
+{% endblock%}

@@ -1,0 +1,85 @@
+
+to create a table in python
+
+from pkg import app
+from pkg.models import db
+app.app_context().push()
+db.create_all()
+
+
+
+
+
+
+
+
+
+
+ <!-- Marital status -->
+                        <!-- <div class="row">
+                          <div class="col my-3 mx-3">
+                            {{f.mStatus.label}}
+                            {% if f.mStatus.errors %}
+                                {% for j in f.mStatus.errors %}
+                              <p style="color: red;">{{j}} </p>
+                                {% endfor %}
+                            {%endif %}
+                            {{f.mStatus(class_="form-control" ) }}
+                          </div>
+                          <div class="col my-3 mx-3">
+                            {{f.mStatus.label}}
+                            {% if f.Dob.errors %}
+                            {% for j in f.mStatus.errors %}
+                            <span style="color: red;">{{f.Dob.errors}}</span>
+                            {%endfor%}
+                            {%endif%}
+                            {{f.mStatus(class_="form-control" )}}
+                          </div>
+                          <div class="col my-3 mx-3">
+                            {{f.phn.label}}
+                            {% if f.phn.errors %}
+                            <span style="color: red;">{{f.phn.errors}}</span>
+                            {%endif%}
+                            {{f.phn(class_="form-control" )}}
+                          </div>
+                        </div> -->
+                        <!-- country -->
+                        <div class="col my-3 mx-3">
+                          {{f.country.label}}
+                          {% if f.country.errors %}
+                            {% for j in f.country.errors %}
+                            <p style="color: red;">{{j}}</p>
+                            {%endfor%}
+                          {%endif%}
+                          {{f.country(class_="form-control" )}}
+                        </div>
+                        <!--  -->
+                        <div class="col my-3 mx-3">
+                          {{f.address.label}}
+                          {% if f.address.errors %}
+                            {% for j in f.address.errors %}
+                            <p style="color: red;">{{j}}</p>
+                            {%endfor%}
+                          {%endif%}
+                          {{f.address(class_="form-control" )}}
+                        </div>
+                        <!-- state city zip -->
+                        <div class="row">
+                          <div class="col my-3 mx-3">
+                            {{f.state.label}}
+                            {% if f.state.errors %}
+                                {% for j in f.state.errors %}
+                              <p style="color: red;">{{j}} </p>
+                                {% endfor %}
+                            {%endif %}
+                            {{f.state(class_="form-control" ) }}
+                          </div>
+                          <div class="col my-3 mx-3">
+                            {{f.city.label}}
+                            {% if f.city.errors %}
+                              {% for j in f.city.errors %}
+                              <p style="color: red;">{{j}}</p>
+                              {%endfor%}
+                            {%endif%}
+                            {{f.city(class_="form-control" )}}
+                          </div>

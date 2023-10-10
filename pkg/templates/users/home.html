@@ -1,0 +1,42 @@
+{% extends "users/layout1.html"%}
+
+{% block title %} 
+{{super()}} : Home Page
+{%endblock %}
+
+{% block banner %}
+<div class="row banner" style="background-image: url('/static/img/h1.jpg'); background-size: cover;">
+    <div class="col-12" style="height:inherit; background-color: rgba(0,0,0,0.5);"></div>
+</div>
+
+
+{{config_items}}
+
+{% endblock %}
+
+
+{% block content %}
+<!-- <div class="row content"> -->
+    <div class="col-12">
+        <h2 class="my-3">Welcome Home!</h2>
+        {% set m = get_flashed_messages(with_categories=True) %}
+        {%if m: %}
+        {% for cat,msg in m %}
+            {% if cat == "error" %}
+            <div class="alert alert-danger text-center">{{msg}} </div>
+            {% else %}
+            <div class="alert alert-info text-center">{{msg}} </div>
+            {%endif%}
+        {%endfor %}
+        {%endif%}
+        <p>This is a sample content, pls ignore,Party members can start the preparation for the swaering in ceremony of the Democratically elected President on May 29th, 2023.
+            The two-day event will see visitors from all across the nation in the smart city of Abuja</p>
+            <p>This is a sample content, pls ignore,Party members can start the preparation for the swaering in ceremony of the Democratically elected President on May 29th, 2023.
+                The two-day event will see visitors from all across the nation in the smart city of Abuja</p>
+                <p>This is a sample content, pls ignore,Party members can start the preparation for the swaering in ceremony of the Democratically elected President on May 29th, 2023.
+                    The two-day event will see visitors from all across the nation in the smart city of Abuja</p>
+                    <p>This is a sample content, pls ignore,Party members can start the preparation for the swaering in ceremony of the Democratically elected President on May 29th, 2023.
+                        The two-day event will see visitors from all across the nation in the smart city of Abuja</p>
+    </div>
+<!-- </div> -->
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "users/layout1.html"%}
+
+{% block title %} 
+{{super()}} : Tourist_centers
+{%endblock %}
+
+{%block content%}
+<div class="col-md-12">
+    <h2>Tourist centers in {%set t = request.cookies.get("dest","The world") %}</h2>
+    <hr>
+
+    <p>Here are a few interesting laces to see:</p>
+
+    {% if request.cookies.get("dest") == "africa" or request.cookies.get("dest") == None or request.cookies.get("dest") == "" %}
+   <h5>Africa</h5>
+   <ul>
+        {%for a in africa%}
+        <li>{{a}}</li>
+        {%endfor%}
+   </ul>
+   {%endif%}
+
+   {% if request.cookies.get("dest") == "europe" or request.cookies.get("dest") == None  or request.cookies.get("dest") == "" %}
+   <h5>Europe</h5>
+   <ul>
+        {%for e in europe%}
+        <li>{{e}}</li>
+        {%endfor%}
+   </ul>
+   {%endif%}
+
+   {% if request.cookies.get("dest") == "Asia" or request.cookies.get("dest") == None or request.cookies.get("dest") == "" %}
+   <h5>Asia</h5>
+   <ul>
+        {%for s in Asia%}
+        <li>{{s}}</li>
+        {%endfor%}
+   </ul>
+   {%endif%}
+</div>
+
+{%endblock%}

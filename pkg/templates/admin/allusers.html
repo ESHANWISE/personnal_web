@@ -1,0 +1,78 @@
+{% extends "admin/admin.html"%}
+
+{%block content%}
+
+{{users}}
+
+
+{{oneuser.firsname}}
+<p>Showing {{total}} record(s) of {{users|count}}</p>
+
+     <div class="row" style="min-height: 450px;">
+        <div class="col-md-12">
+                <h2>Fetching from Individual columns</h2>
+                {% if users_explore %}
+                <table class="table table-responsive">
+                        <thhead>
+                                <tr>
+                                        <th>S/n</th>
+                                        <th>Fullname</th>
+                                        <th>Email</th>
+                                        <th>Profile</th>
+                                        <th>Action</th>
+                                </tr>
+                        </thead>
+                       {# <tbody>
+                                {%for email,fname,lname in users_explore%}
+                                <tr>
+                                      
+                                        <td>{{loop.index}}</td>
+                                        <td>{{fname}} {{lname}}</td>
+                                        <td>{{email}}</td>
+                                        <td></td>
+                                        
+                                        
+                                </tr>
+                                {%endfor%}
+                        </tbody>#}
+               </table>
+
+               {%else%}
+               <div class="alert alert-info text-center">No Registration Found</div>
+               {%endif%}
+        </div>
+
+
+        <div class="col-md">
+                <h2>Fetching all columns</h2>
+                <table class="table table-responsive">
+                        <thhead>
+                                <tr>
+                                        <th>S/n</th>
+                                        <th>Fullname</th>
+                                        <th>Email</th>
+                                        <th>Profile</th>
+                                        <th>Action</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                {%for u in users%}
+                                <tr>
+                                      
+                                        <td>{{loop.index}}</td>
+                                        <td>{{u.firsname}} {{u.lastname}}</td>
+                                        <td>{{u.email}}</td>
+                                        <td>{{u.profile[0:15]}}...</td>
+                                        <td><a href="{{url_for('show_user',id=u.regid)}}" class="btn btn-dark btn-sm">View Details</a>
+                                        <a href="{{url_for('edit_user',id=u.regid)}}" class="btn btn-warning btn-sm">Edit</a>    
+                                        <a href="/admin/delete/{{u.regid}}" class="btn btn-danger btn-sm" onclick="return confirm('Do you really want to delete this')"> Delete</a>
+                                        </td>
+                                        
+                                </tr>
+                                {%endfor%}
+                        </tbody>
+               </table>
+        </div>
+    </div>
+{% endblock %}
+    

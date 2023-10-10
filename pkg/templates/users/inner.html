@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/bootstrap/css/bootstrap.min.css')}}">
+    <style type="text/css">
+.content{
+    min-height: 400px;
+}
+.banner{
+    height:300px;
+}
+nav,.menu{
+    background-color:cadetblue;
+}
+h4{
+    color:chocolate;
+}
+
+    </style>
+    <title>Home Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <img src="{{ url_for('static',filename='images/logo.png')}}" class="img-fluid">
+            </div>
+            <div class="col-11 menu">
+                
+                <nav class="navbar navbar-expand-md">
+                    <div class="container-fluid">
+                    
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                          <li class="nav-item">
+                            <a class="nav-link text-white active" aria-current="page" href="/">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-white" href="/#partner">Partner Hotels</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-white" href="/blog">Our Blog</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-white" href="/contact">Contact Us</a>
+                          </li>
+                        </ul>
+                      
+                      </div>
+                    </div>
+                  </nav>
+       
+                  
+
+            </div>
+        </div>
+       
+        <div class="row content">
+            <div class="col-12">
+                <h2 class="my-3">Welcome Home!</h2>
+                <p>This is a sample content, pls ignore,Party members can start the preparation for the swaering in ceremony of the Democratically elected President on May 29th, 2023.
+                    The two-day event will see visitors from all across the nation in the smart city of Abuja</p>
+                    <p>This is a sample content, pls ignore,Party members can start the preparation for the swaering in ceremony of the Democratically elected President on May 29th, 2023.
+                        The two-day event will see visitors from all across the nation in the smart city of Abuja</p>
+                        <p>This is a sample content, pls ignore,Party members can start the preparation for the swaering in ceremony of the Democratically elected President on May 29th, 2023.
+                            The two-day event will see visitors from all across the nation in the smart city of Abuja</p>
+                            <p>This is a sample content, pls ignore,Party members can start the preparation for the swaering in ceremony of the Democratically elected President on May 29th, 2023.
+                                The two-day event will see visitors from all across the nation in the smart city of Abuja</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <h4 class="text-center">Quicklinks</h4>
+                <div><a href="#">Home Page</a></div>
+                <div><a href="#">About Us</a></div>
+                <div><a href="#">Contact Us</a></div>
+                <div><a href="#">Our Blog</a></div>
+            </div>
+            <div class="col-4">
+                <h4 class="text-center">We'd love to hear from you!</h4>
+                <form>
+                    <div class="mb-3 row">
+                        <label class="col-md-4">Fullname</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-md-4">Message</label>
+                        <div class="col-md-8">
+                            <textarea class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        
+                        <div class="col-md-12">
+                           <button class="col-12 btn btn-warning">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4">
+                <h4 class="text-center">Gallery</h4>
+                <img src="{{ url_for('static',filename='images/home_hero.jpg')}}" class="img-fluid">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">Designed By Me &copy; 2023</div>
+        </div>
+    </div>
+</body>
+</html>
